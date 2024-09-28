@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import Calculator from "./pages/answers/Calculator";
+import Navbar from "./pages/answers/Navbar";
+import Question3 from "./pages/answers/Question3";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const NavigationButtons: React .FC = () => {
+  const Navigate = useNavigate();
+  return(
+    <div>
+      <button onClick={()=>Navigate('/')}>Go to Calculator</button>
+      <button onClick={()=>Navigate('/Navbar')}>Go to Navbar</button>
+      <button onClick={()=>Navigate('/Question3')}>Go to Question3</button>
     </div>
   );
-}
+};
+const App: React.FC = () => {
+  return (
+    <Router>
+      <NavigationButtons/>
+      <Routes>
+        <Route path="/" element={<Calculator />} />
+        <Route path="Calculator" element={<Calculator />} />
+        <Route path="Navbar" element={<Navbar />} />
+        <Route path="Question3" element={<Question3 />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;

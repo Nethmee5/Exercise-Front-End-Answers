@@ -1,0 +1,22 @@
+.container {
+  text-align: left;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.firstnumber {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+.secondnumber {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+.btn-add {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
